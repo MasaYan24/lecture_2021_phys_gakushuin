@@ -9,7 +9,7 @@ beta = 0.0
 
 np.random.seed(1)
 x = xmax * np.random.rand(sample_size)
-err = err_sigma * np.random.rand(sample_size)
+err = err_sigma * np.random.randn(sample_size)
 y = alpha * x + beta + err
 
 
@@ -20,3 +20,7 @@ ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.plot(x, y, "o")
 plt.show()
+fig.savefig("data_plotted.png")
+
+np.savetxt("data_table.txt", x)
+
